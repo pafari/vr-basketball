@@ -1,0 +1,176 @@
+[
+  {
+    "x_ft":89,
+    "y_ft":139,
+    "result":"missed",
+    "description":"1st quarter, 10:21.0 remaining Tracy McGrady missed 2-pointer from 18 ft Orlando leads 4-2"
+  },
+  {
+    "x_ft":416,
+    "y_ft":248,
+    "result":"made",
+    "description":"1st quarter, 9:32.0 remaining Tracy McGrady made 3-pointer from 26 ft Orlando now leads 9-4"
+  },
+  {
+    "x_ft":243,
+    "y_ft":320,
+    "result":"made",
+    "description":"1st quarter, 9:01.0 remaining Tracy McGrady made 3-pointer from 27 ft Orlando now leads 12-4"
+  },
+  {
+    "x_ft":240,
+    "y_ft":50,
+    "result":"made",
+    "description":"1st quarter, 8:33.0 remaining Tracy McGrady made 2-pointer from 0 ft Orlando now leads 14-4"
+  },
+  {
+    "x_ft":161,
+    "y_ft":215,
+    "result":"missed",
+    "description":"1st quarter, 8:04.0 remaining Tracy McGrady missed 2-pointer from 18 ft Orlando leads 14-4"
+  },
+  {
+    "x_ft":139,
+    "y_ft":90,
+    "result":"made",
+    "description":"1st quarter, 6:57.0 remaining Tracy McGrady made 2-pointer from 11 ft Orlando now leads 16-6"
+  },
+  {
+    "x_ft":240,
+    "y_ft":50,
+    "result":"made",
+    "description":"1st quarter, 4:39.0 remaining Tracy McGrady made 2-pointer from 0 ft Orlando now leads 22-11"
+  },
+  {
+    "x_ft":116,
+    "y_ft":276,
+    "result":"made",
+    "description":"2nd quarter, 7:48.0 remaining Tracy McGrady made 3-pointer from 26 ft Orlando now leads 43-29"
+  },
+  {
+    "x_ft":401,
+    "y_ft":128,
+    "result":"made",
+    "description":"2nd quarter, 6:12.0 remaining Tracy McGrady made 2-pointer from 18 ft Orlando now leads 47-36"
+  },
+  {
+    "x_ft":232,
+    "y_ft":128,
+    "result":"missed",
+    "description":"2nd quarter, 5:25.0 remaining Tracy McGrady missed 2-pointer from 8 ft Orlando leads 47-38"
+  },
+  {
+    "x_ft":240,
+    "y_ft":50,
+    "result":"missed",
+    "description":"2nd quarter, 4:25.0 remaining Tracy McGrady missed 2-pointer from 0 ft Orlando leads 49-40"
+  },
+  {
+    "x_ft":104,
+    "y_ft":286,
+    "result":"missed",
+    "description":"2nd quarter, 3:17.0 remaining Tracy McGrady missed 3-pointer from 27 ft Orlando leads 49-42"
+  },
+  {
+    "x_ft":161,
+    "y_ft":242,
+    "result":"made",
+    "description":"2nd quarter, 1:31.0 remaining Tracy McGrady made 2-pointer from 21 ft Orlando now leads 56-42"
+  },
+  {
+    "x_ft":131,
+    "y_ft":276,
+    "result":"made",
+    "description":"2nd quarter, 0:19.4 remaining Tracy McGrady made 3-pointer from 25 ft Orlando now leads 59-45"
+  },
+  {
+    "x_ft":240,
+    "y_ft":50,
+    "result":"made",
+    "description":"3rd quarter, 9:59.0 remaining Tracy McGrady made 2-pointer from 0 ft Orlando now leads 68-53"
+  },
+  {
+    "x_ft":74,
+    "y_ft":248,
+    "result":"missed",
+    "description":"3rd quarter, 7:50.0 remaining Tracy McGrady missed 3-pointer from 26 ft Orlando leads 70-59"
+  },
+  {
+    "x_ft":89,
+    "y_ft":128,
+    "result":"made",
+    "description":"3rd quarter, 6:00.0 remaining Tracy McGrady made 2-pointer from 17 ft Orlando now leads 73-61"
+  },
+  {
+    "x_ft":26,
+    "y_ft":204,
+    "result":"missed",
+    "description":"3rd quarter, 4:30.0 remaining Tracy McGrady missed 3-pointer from 26 ft Orlando leads 73-63"
+  },
+  {
+    "x_ft":338,
+    "y_ft":187,
+    "result":"missed",
+    "description":"3rd quarter, 1:25.0 remaining Tracy McGrady missed 2-pointer from 17 ft Orlando leads 76-71"
+  },
+  {
+    "x_ft":232,
+    "y_ft":78,
+    "result":"made",
+    "description":"3rd quarter, 0:52.6 remaining Tracy McGrady made 2-pointer from 3 ft Orlando now leads 78-71"
+  },
+  {
+    "x_ft":83,
+    "y_ft":139,
+    "result":"made",
+    "description":"4th quarter, 8:44.0 remaining Tracy McGrady made 2-pointer from 18 ft Orlando now leads 86-84"
+  },
+  {
+    "x_ft":239,
+    "y_ft":248,
+    "result":"made",
+    "description":"4th quarter, 8:04.0 remaining Tracy McGrady made 2-pointer from 20 ft Orlando now leads 88-86"
+  },
+  {
+    "x_ft":116,
+    "y_ft":57,
+    "result":"made",
+    "description":"4th quarter, 5:11.0 remaining Tracy McGrady made 2-pointer from 12 ft Orlando now trails 90-93"
+  },
+  {
+    "x_ft":386,
+    "y_ft":183,
+    "result":"missed",
+    "description":"4th quarter, 4:00.0 remaining Tracy McGrady missed 2-pointer from 20 ft Orlando trails 92-93"
+  },
+  {
+    "x_ft":224,
+    "y_ft":265,
+    "result":"made",
+    "description":"4th quarter, 3:03.0 remaining Tracy McGrady made 2-pointer from 22 ft Orlando now leads 94-93"
+  },
+  {
+    "x_ft":224,
+    "y_ft":238,
+    "result":"missed",
+    "description":"4th quarter, 1:47.0 remaining Tracy McGrady missed 2-pointer from 19 ft Orlando trails 94-95"
+  },
+  {
+    "x_ft":125,
+    "y_ft":128,
+    "result":"made",
+    "description":"4th quarter, 1:10.0 remaining Tracy McGrady made 2-pointer from 14 ft Orlando now leads 96-95"
+  },
+  {
+    "x_ft":125,
+    "y_ft":122,
+    "result":"missed",
+    "description":"4th quarter, 0:35.1 remaining Tracy McGrady missed 2-pointer from 14 ft Orlando leads 96-95"
+  },
+  {
+    "x_ft":350,
+    "y_ft":111,
+    "result":"made",
+    "description":"4th quarter, 0:12.7 remaining Tracy McGrady made 2-pointer from 13 ft Orlando now leads 98-96"
+  }
+]

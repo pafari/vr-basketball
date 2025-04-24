@@ -1,0 +1,254 @@
+[
+  {
+    "player":"Carmelo Anthony",
+    "x":240,
+    "y":50,
+    "result":"made",
+    "description":"1st quarter, 11:19.0 remaining Carmelo Anthony made 2-pointer from 0 ft Denver now leads 2-0",
+    "x_ft":-1.0,
+    "y_ft":42.0
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":404,
+    "y":235,
+    "result":"missed",
+    "description":"1st quarter, 9:58.0 remaining Carmelo Anthony missed 3-pointer from 25 ft Denver trails 2-3",
+    "x_ft":15.4,
+    "y_ft":23.5
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":240,
+    "y":50,
+    "result":"made",
+    "description":"1st quarter, 7:14.0 remaining Carmelo Anthony made 2-pointer from 0 ft Denver now trails 9-11",
+    "x_ft":-1.0,
+    "y_ft":42.0
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":240,
+    "y":50,
+    "result":"missed",
+    "description":"1st quarter, 6:49.0 remaining Carmelo Anthony missed 2-pointer from 0 ft Denver trails 9-13",
+    "x_ft":-1.0,
+    "y_ft":42.0
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":201,
+    "y":95,
+    "result":"made",
+    "description":"1st quarter, 4:54.0 remaining Carmelo Anthony made 2-pointer from 6 ft Denver now tied 16-16",
+    "x_ft":-4.9,
+    "y_ft":37.5
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":240,
+    "y":50,
+    "result":"made",
+    "description":"1st quarter, 3:29.0 remaining Carmelo Anthony made 2-pointer from 0 ft Denver now leads 21-20",
+    "x_ft":-1.0,
+    "y_ft":42.0
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":325,
+    "y":227,
+    "result":"missed",
+    "description":"1st quarter, 1:16.0 remaining Carmelo Anthony missed 2-pointer from 20 ft Denver trails 24-28",
+    "x_ft":7.5,
+    "y_ft":24.3
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":450,
+    "y":192,
+    "result":"made",
+    "description":"2nd quarter, 11:24.0 remaining Carmelo Anthony made 3-pointer from 25 ft Denver now trails 29-33",
+    "x_ft":20.0,
+    "y_ft":27.8
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":407,
+    "y":158,
+    "result":"missed",
+    "description":"2nd quarter, 10:51.0 remaining Carmelo Anthony missed 2-pointer from 20 ft Denver trails 29-35",
+    "x_ft":15.7,
+    "y_ft":31.2
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":348,
+    "y":156,
+    "result":"made",
+    "description":"2nd quarter, 9:38.0 remaining Carmelo Anthony made 2-pointer from 15 ft Denver now trails 36-39",
+    "x_ft":9.8,
+    "y_ft":31.4
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":240,
+    "y":50,
+    "result":"missed",
+    "description":"2nd quarter, 8:36.0 remaining Carmelo Anthony missed 2-pointer from 0 ft Denver trails 38-42",
+    "x_ft":-1.0,
+    "y_ft":42.0
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":240,
+    "y":50,
+    "result":"made",
+    "description":"2nd quarter, 5:56.0 remaining Carmelo Anthony made 2-pointer from 0 ft Denver now trails 44-46",
+    "x_ft":-1.0,
+    "y_ft":42.0
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":317,
+    "y":133,
+    "result":"missed",
+    "description":"2nd quarter, 4:14.0 remaining Carmelo Anthony missed 2-pointer from 11 ft Denver trails 46-54",
+    "x_ft":6.7,
+    "y_ft":33.7
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":240,
+    "y":50,
+    "result":"made",
+    "description":"2nd quarter, 4:02.0 remaining Carmelo Anthony made 2-pointer from 0 ft Denver now trails 48-54",
+    "x_ft":-1.0,
+    "y_ft":42.0
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":93,
+    "y":98,
+    "result":"made",
+    "description":"2nd quarter, 1:33.0 remaining Carmelo Anthony made 2-pointer from 15 ft Denver now trails 57-58",
+    "x_ft":-15.7,
+    "y_ft":37.2
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":240,
+    "y":50,
+    "result":"made",
+    "description":"2nd quarter, 0:35.1 remaining Carmelo Anthony made 2-pointer from 0 ft Denver now tied 59-59",
+    "x_ft":-1.0,
+    "y_ft":42.0
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":240,
+    "y":50,
+    "result":"made",
+    "description":"3rd quarter, 10:11.0 remaining Carmelo Anthony made 2-pointer from 0 ft Denver now leads 66-65",
+    "x_ft":-1.0,
+    "y_ft":42.0
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":269,
+    "y":171,
+    "result":"made",
+    "description":"3rd quarter, 7:12.0 remaining Carmelo Anthony made 2-pointer from 12 ft Denver now leads 76-72",
+    "x_ft":1.9,
+    "y_ft":29.9
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":401,
+    "y":144,
+    "result":"missed",
+    "description":"3rd quarter, 5:32.0 remaining Carmelo Anthony missed 2-pointer from 19 ft Denver leads 78-74",
+    "x_ft":15.1,
+    "y_ft":32.6
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":427,
+    "y":85,
+    "result":"made",
+    "description":"3rd quarter, 4:21.0 remaining Carmelo Anthony made 2-pointer from 19 ft Denver now leads 83-78",
+    "x_ft":17.7,
+    "y_ft":38.5
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":422,
+    "y":85,
+    "result":"made",
+    "description":"3rd quarter, 3:33.0 remaining Carmelo Anthony made 2-pointer from 19 ft Denver now leads 85-80",
+    "x_ft":17.2,
+    "y_ft":38.5
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":392,
+    "y":204,
+    "result":"made",
+    "description":"3rd quarter, 3:06.0 remaining Carmelo Anthony made 2-pointer from 22 ft Denver now leads 87-80",
+    "x_ft":14.2,
+    "y_ft":26.6
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":397,
+    "y":261,
+    "result":"missed",
+    "description":"3rd quarter, 0:48.3 remaining Carmelo Anthony missed 3-pointer from 26 ft Denver leads 89-87",
+    "x_ft":14.7,
+    "y_ft":20.9
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":240,
+    "y":50,
+    "result":"made",
+    "description":"3rd quarter, 0:30.8 remaining Carmelo Anthony made 2-pointer from 0 ft Denver now leads 91-87",
+    "x_ft":-1.0,
+    "y_ft":42.0
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":450,
+    "y":209,
+    "result":"missed",
+    "description":"3rd quarter, 0:01.2 remaining Carmelo Anthony missed 3-pointer from 26 ft Denver leads 92-87",
+    "x_ft":20.0,
+    "y_ft":26.1
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":240,
+    "y":50,
+    "result":"made",
+    "description":"4th quarter, 11:44.0 remaining Carmelo Anthony made 2-pointer from 0 ft Denver now leads 94-87",
+    "x_ft":-1.0,
+    "y_ft":42.0
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":300,
+    "y":120,
+    "result":"missed",
+    "description":"4th quarter, 10:11.0 remaining Carmelo Anthony missed 2-pointer from 9 ft Denver leads 95-90",
+    "x_ft":5.0,
+    "y_ft":35.0
+  },
+  {
+    "player":"Carmelo Anthony",
+    "x":93,
+    "y":133,
+    "result":"missed",
+    "description":"4th quarter, 6:44.0 remaining Carmelo Anthony missed 2-pointer from 17 ft Denver trails 100-101",
+    "x_ft":-15.7,
+    "y_ft":33.7
+  }
+]

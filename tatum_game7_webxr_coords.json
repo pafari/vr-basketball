@@ -1,0 +1,198 @@
+[
+  {
+    "player":"Jayson Tatum",
+    "x_ft":-1.4,
+    "y_ft":5.7,
+    "result":"made",
+    "description":"1st quarter, 9:23.0 remaining Jayson Tatum made 2-pointer from 3 ft Boston now leads 6-2"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":-8.1,
+    "y_ft":11.8,
+    "result":"missed",
+    "description":"1st quarter, 8:13.0 remaining Jayson Tatum missed 2-pointer from 11 ft Boston leads 8-5"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":2.3,
+    "y_ft":9.3,
+    "result":"missed",
+    "description":"1st quarter, 5:44.0 remaining Jayson Tatum missed 2-pointer from 7 ft Boston trails 10-15"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":8.3,
+    "y_ft":5.2,
+    "result":"made",
+    "description":"1st quarter, 5:31.0 remaining Jayson Tatum made 2-pointer from 10 ft Boston now trails 12-15"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":-16.9,
+    "y_ft":23.7,
+    "result":"missed",
+    "description":"1st quarter, 2:54.0 remaining Jayson Tatum missed 3-pointer from 26 ft Boston trails 16-19"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":0.2,
+    "y_ft":3.6,
+    "result":"made",
+    "description":"1st quarter, 2:35.0 remaining Jayson Tatum made 2-pointer from 1 ft Boston now trails 18-21"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":-3.9,
+    "y_ft":6.0,
+    "result":"missed",
+    "description":"1st quarter, 2:08.0 remaining Jayson Tatum missed 2-pointer from 4 ft Boston trails 18-21"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":-5.6,
+    "y_ft":6.3,
+    "result":"made",
+    "description":"1st quarter, 1:07.0 remaining Jayson Tatum made 2-pointer from 6 ft Boston now trails 20-26"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":1.3,
+    "y_ft":5.7,
+    "result":"missed",
+    "description":"2nd quarter, 8:32.0 remaining Jayson Tatum missed 2-pointer from 3 ft Boston trails 27-35"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":1.5,
+    "y_ft":4.9,
+    "result":"missed",
+    "description":"2nd quarter, 7:19.0 remaining Jayson Tatum missed 2-pointer from 3 ft Boston trails 33-35"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":-3.5,
+    "y_ft":6.0,
+    "result":"made",
+    "description":"2nd quarter, 5:15.0 remaining Jayson Tatum made 2-pointer from 4 ft Boston now leads 40-39"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":-4.2,
+    "y_ft":6.4,
+    "result":"made",
+    "description":"2nd quarter, 4:41.0 remaining Jayson Tatum made 2-pointer from 5 ft Boston now leads 42-39"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":1.5,
+    "y_ft":19.0,
+    "result":"made",
+    "description":"2nd quarter, 2:33.0 remaining Jayson Tatum made 2-pointer from 16 ft Boston now tied 46-46"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":0.7,
+    "y_ft":13.1,
+    "result":"made",
+    "description":"2nd quarter, 1:32.0 remaining Jayson Tatum made 2-pointer from 10 ft Boston now leads 50-49"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":-16.7,
+    "y_ft":23.8,
+    "result":"made",
+    "description":"2nd quarter, 0:32.0 remaining Jayson Tatum made 3-pointer from 26 ft Boston now leads 55-52"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":3.7,
+    "y_ft":30.3,
+    "result":"missed",
+    "description":"2nd quarter, 0:02.0 remaining Jayson Tatum missed 3-pointer from 28 ft Boston leads 55-52"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":-2.7,
+    "y_ft":2.9,
+    "result":"made",
+    "description":"3rd quarter, 9:50.0 remaining Jayson Tatum made 2-pointer from 2 ft Boston now leads 59-55"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":-24.0,
+    "y_ft":2.2,
+    "result":"made",
+    "description":"3rd quarter, 9:09.0 remaining Jayson Tatum made 3-pointer from 23 ft Boston now leads 62-55"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":-0.9,
+    "y_ft":27.8,
+    "result":"made",
+    "description":"3rd quarter, 8:26.0 remaining Jayson Tatum made 3-pointer from 25 ft Boston now leads 65-55"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":-10.3,
+    "y_ft":26.0,
+    "result":"made",
+    "description":"3rd quarter, 6:15.0 remaining Jayson Tatum made 3-pointer from 25 ft Boston now leads 73-58"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":-5.4,
+    "y_ft":12.6,
+    "result":"missed",
+    "description":"3rd quarter, 4:40.0 remaining Jayson Tatum missed 2-pointer from 11 ft Boston leads 76-58"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":8.0,
+    "y_ft":26.0,
+    "result":"made",
+    "description":"3rd quarter, 0:59.0 remaining Jayson Tatum made 3-pointer from 25 ft Boston now leads 88-60"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":-19.4,
+    "y_ft":19.6,
+    "result":"missed",
+    "description":"3rd quarter, 0:15.0 remaining Jayson Tatum missed 3-pointer from 25 ft Boston leads 88-62"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":3.3,
+    "y_ft":4.1,
+    "result":"missed",
+    "description":"4th quarter, 11:17.0 remaining Jayson Tatum missed 2-pointer from 4 ft Boston leads 88-65"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":3.0,
+    "y_ft":4.3,
+    "result":"made",
+    "description":"4th quarter, 9:14.0 remaining Jayson Tatum made 2-pointer from 4 ft Boston now leads 95-70"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":-2.2,
+    "y_ft":2.8,
+    "result":"made",
+    "description":"4th quarter, 8:46.0 remaining Jayson Tatum made 2-pointer from 1 ft Boston now leads 97-72"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":22.8,
+    "y_ft":8.0,
+    "result":"made",
+    "description":"4th quarter, 7:21.0 remaining Jayson Tatum made 3-pointer from 24 ft Boston now leads 102-76"
+  },
+  {
+    "player":"Jayson Tatum",
+    "x_ft":19.8,
+    "y_ft":21.1,
+    "result":"missed",
+    "description":"4th quarter, 6:01.0 remaining Jayson Tatum missed 3-pointer from 28 ft Boston leads 102-76"
+  }
+]

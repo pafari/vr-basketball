@@ -3,10 +3,8 @@ import * as THREE from "three";
 import { XRButton } from "three/examples/jsm/webxr/XRButton.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import TWEEN from "@tweenjs/tween.js";
-import {
-  CSS2DRenderer,
-  CSS2DObject,
-} from "three/examples/jsm/renderers/CSS2DRenderer";
+import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
+import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
 
 export default function BasketballCourtScene() {
   const mountRef = useRef(null);
@@ -44,12 +42,7 @@ export default function BasketballCourtScene() {
       }
     }
 
-    const labelRenderer = new CSS2DRenderer();
-    labelRenderer.setSize(window.innerWidth, window.innerHeight);
-    labelRenderer.domElement.style.position = "absolute";
-    labelRenderer.domElement.style.top = "0px";
-    labelRenderer.domElement.style.pointerEvents = "none";
-    mountRef.current.appendChild(labelRenderer.domElement);
+    
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
@@ -94,27 +87,21 @@ export default function BasketballCourtScene() {
     rim.castShadow = true;
     scene.add(rim);
 
-    const labelRefs = [];
-
-    const createZoneLabel = (text, pos) => {
-      const div = document.createElement("div");
-      div.className = "zone-label";
-      div.textContent = text;
-      div.style.color = "white";
-      div.style.fontWeight = "bold";
-      div.style.background = "rgba(0, 0, 0, 0.6)";
-      div.style.padding = "2px 6px";
-      div.style.borderRadius = "4px";
-      div.style.fontSize = "14px";
-      div.style.transition = "opacity 0.2s";
-
-      const label = new CSS2DObject(div);
-      label.position.set(pos.x, pos.y, pos.z);
-      scene.add(label);
-
-      // Track the div and its position for dynamic opacity updates
-      labelRefs.push({ label, div });
+    
+    const createZoneOverlay = (width, height, position, color) => {
+      const geometry = new THREE.PlaneGeometry(width, height);
+      const material = new THREE.MeshBasicMaterial({
+        color,
+        transparent: true,
+        opacity: 0.25,
+        depthWrite: false, // helps prevent z-fighting
+      });
+      const mesh = new THREE.Mesh(geometry, material);
+      mesh.rotation.x = -Math.PI / 2;
+      mesh.position.copy(position);
+      scene.add(mesh);
     };
+
 
     // Net
     const netGeometry = new THREE.CylinderGeometry(0.7, 0.7, 1.5, 12);
@@ -126,9 +113,17 @@ export default function BasketballCourtScene() {
     net.position.set(0, 9.1, -46.7);
     scene.add(net);
 
-    createZoneLabel("Paint", new THREE.Vector3(0, 2, -38));
-    createZoneLabel("Midrange", new THREE.Vector3(0, 2, -10));
-    createZoneLabel("3PT", new THREE.Vector3(0, 2, 27.25));
+    const loader = new FontLoader();
+    loader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
+      // Paint zone (16 ft wide × 19 ft long)
+      createZoneOverlay(16, 19, new THREE.Vector3(0, 0.11, -37.5), 0x00b8e6); // light blue
+
+      // Midrange zone (entire area between paint and 3PT arc)
+      createZoneOverlay(40, 28, new THREE.Vector3(0, 0.11, -10), 0xff8c00); // orange-ish
+
+      // 3PT zone (wide zone past arc)
+      createZoneOverlay(50, 20, new THREE.Vector3(0, 0.11, 24.5), 0x800080); // purple
+    });
 
     // Court Markings
     const courtLinesMaterial = new THREE.LineBasicMaterial({
@@ -225,6 +220,7 @@ export default function BasketballCourtScene() {
         .yoyo(true)
         .start();
     };
+
 
     const loadShots = async () => {
       try {
@@ -381,17 +377,7 @@ export default function BasketballCourtScene() {
       controls.update();
       renderer.render(scene, camera);
 
-      labelRefs.forEach(({ label, div }) => {
-        const distance = camera.position.distanceTo(label.position);
-        const maxVisibleDistance = 10; // fade threshold
-        const opacity = Math.min(
-          1,
-          Math.max(0, (distance - 5) / (maxVisibleDistance - 5))
-        );
-        div.style.opacity = opacity.toFixed(0.025);
-      });
-
-      labelRenderer.render(scene, camera);
+      
       requestAnimationFrame(animate);
     };
     animate();

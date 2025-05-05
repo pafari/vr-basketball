@@ -42,8 +42,6 @@ export default function BasketballCourtScene() {
       }
     }
 
-    
-
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
@@ -57,6 +55,7 @@ export default function BasketballCourtScene() {
     directionalLight.castShadow = true;
     scene.add(directionalLight);
 
+    // Reuse your original logic for court, backboard, rim, net, zone labels, and court lines (not shown here to conserve space)
     // Court with wood color
     const courtGeometry = new THREE.PlaneGeometry(50, 94);
     const courtMaterial = new THREE.MeshStandardMaterial({
@@ -87,7 +86,6 @@ export default function BasketballCourtScene() {
     rim.castShadow = true;
     scene.add(rim);
 
-    
     const createZoneOverlay = (width, height, position, color) => {
       const geometry = new THREE.PlaneGeometry(width, height);
       const material = new THREE.MeshBasicMaterial({
@@ -101,7 +99,6 @@ export default function BasketballCourtScene() {
       mesh.position.copy(position);
       scene.add(mesh);
     };
-
 
     // Net
     const netGeometry = new THREE.CylinderGeometry(0.7, 0.7, 1.5, 12);
@@ -212,175 +209,156 @@ export default function BasketballCourtScene() {
       scene.add(new THREE.Line(marker, courtLinesMaterial));
     });
 
-    // Shot Animation System
-    const animateNet = () => {
-      new TWEEN.Tween(net.scale)
-        .to({ y: 1.3 }, 300)
-        .easing(TWEEN.Easing.Elastic.Out)
-        .yoyo(true)
-        .start();
-    };
+    // State for queued shots
+    let shotIndex = 0;
+    let shots = [];
+    let isAnimating = false;
 
+    // Helper function to animate each shot one at a time
+    function playShot(shot, onComplete) {
+      const ball = new THREE.Mesh(
+        new THREE.SphereGeometry(0.3, 8, 8), // Lower poly for performance
+        new THREE.MeshStandardMaterial({ color: 0xffa500 })
+      );
+      ball.castShadow = true;
+      const startPos = new THREE.Vector3(shot.x_ft, 1, shot.y_ft);
+      ball.position.copy(startPos);
+      shotsGroup.add(ball);
 
-    const loadShots = async () => {
+      const isMade = (shot.result || "").toLowerCase().includes("made");
+      const trailColor = isMade ? 0x00ff00 : 0xff0000;
+
+      const targetPos = new THREE.Vector3();
+      const controlPos = new THREE.Vector3();
+
+      if (isMade) {
+        targetPos.set(0, 9.8, -46.7);
+        controlPos.set(
+          (startPos.x + targetPos.x) / 2,
+          Math.max(20, startPos.y + 15),
+          (startPos.z + targetPos.z) / 2
+        );
+      } else {
+        const missType = Math.random();
+        if (missType < 0.7) {
+          targetPos.set(
+            0 + (Math.random() - 0.5) * 1.5,
+            9.5,
+            -46.7 + (Math.random() - 0.5) * 1.5
+          );
+          controlPos.set(
+            (startPos.x + targetPos.x) / 2,
+            12,
+            (startPos.z + targetPos.z) / 2
+          );
+        } else {
+          targetPos.set(
+            startPos.x + (Math.random() - 0.5) * 10,
+            1,
+            startPos.z - 15
+          );
+          controlPos.set(
+            (startPos.x + targetPos.x) / 2,
+            8,
+            (startPos.z + targetPos.z) / 2
+          );
+        }
+      }
+
+      const trajectory = new THREE.QuadraticBezierCurve3(
+        startPos,
+        controlPos,
+        targetPos
+      );
+      const trailGeometry = new THREE.BufferGeometry().setFromPoints(
+        trajectory.getPoints(50)
+      );
+      const trailMaterial = new THREE.LineBasicMaterial({
+        color: trailColor,
+        linewidth: 2,
+      });
+      const trail = new THREE.Line(trailGeometry, trailMaterial);
+      shotsGroup.add(trail);
+
+      const duration = isMade ? 120 : 100;
+      const startTime = Date.now();
+
+      const animate = () => {
+        const elapsed = Date.now() - startTime;
+        const t = Math.min(elapsed / (duration * 16), 1);
+        const point = trajectory.getPoint(t);
+        const verticalOffset = Math.sin(t * Math.PI) * (isMade ? 5 : 3);
+        ball.position.set(point.x, point.y + verticalOffset, point.z);
+        ball.rotation.x = t * Math.PI * 2;
+        ball.rotation.z = t * Math.PI * 1.5;
+
+        if (t < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          setTimeout(
+            () => {
+              shotsGroup.remove(ball);
+              shotsGroup.remove(trail);
+              ball.geometry.dispose();
+              ball.material.dispose();
+              trail.geometry.dispose();
+              trail.material.dispose();
+              onComplete();
+            },
+            isMade ? 1000 : 500
+          );
+        }
+      };
+
+      animate();
+    }
+
+    function animateNextShot() {
+      if (shotIndex >= shots.length || isAnimating) return;
+      isAnimating = true;
+      playShot(shots[shotIndex++], () => {
+        isAnimating = false;
+      });
+    }
+
+    async function loadShots() {
       try {
         const response = await fetch("tatum_game7_webxr_coords.json");
         if (!response.ok) throw new Error("Failed to load shot data");
-        const shots = await response.json();
+        shots = await response.json();
 
         let madeCount = 0;
         let missedCount = 0;
 
-        shotsGroup.clear();
-
-        for (const [index, shot] of shots.entries()) {
-          await new Promise((resolve) => {
-            // Ball creation
-            const ball = new THREE.Mesh(
-              new THREE.SphereGeometry(0.3, 32, 32),
-              new THREE.MeshStandardMaterial({ color: 0xffa500 })
-            );
-            ball.castShadow = true;
-            const startPos = new THREE.Vector3(shot.x_ft, 1, shot.y_ft);
-            ball.position.copy(startPos);
-            shotsGroup.add(ball);
-
-            const originMarker = new THREE.Mesh(
-              new THREE.SphereGeometry(0.25, 16, 16),
-              new THREE.MeshStandardMaterial({
-                color: 0xffa500,
-                opacity: 0.5,
-                transparent: true,
-              })
-            );
-            originMarker.position.copy(startPos);
-            shotsGroup.add(originMarker);
-
-            // ========== CRITICAL COLOR LOGIC ==========
-            const isMade = (shot.result || "").toLowerCase().includes("made");
-            const trailColor = isMade ? 0x00ff00 : 0xff0000;
-
-            // ========== TRAJECTORY LOGIC ==========
-            const targetPos = new THREE.Vector3();
-            const controlPos = new THREE.Vector3();
-
-            if (isMade) {
-              // Made shot: direct to basket
-              madeCount++;
-              targetPos.set(0, 9.8, -46.7);
-              controlPos.set(
-                (startPos.x + targetPos.x) / 2,
-                Math.max(20, startPos.y + 15), // Ensure high arc
-                (startPos.z + targetPos.z) / 2
-              );
-            } else {
-              // Miss: randomize between rim-out and airball
-              missedCount++;
-              const missType = Math.random();
-              if (missType < 0.7) {
-                // Rim hit
-                targetPos.set(
-                  0 + (Math.random() - 0.5) * 1.5,
-                  9.5,
-                  -46.7 + (Math.random() - 0.5) * 1.5
-                );
-                controlPos.set(
-                  (startPos.x + targetPos.x) / 2,
-                  12,
-                  (startPos.z + targetPos.z) / 2
-                );
-              } else {
-                // Airball
-                targetPos.set(
-                  startPos.x + (Math.random() - 0.5) * 10,
-                  1,
-                  startPos.z - 15
-                );
-                controlPos.set(
-                  (startPos.x + targetPos.x) / 2,
-                  8,
-                  (startPos.z + targetPos.z) / 2
-                );
-              }
-            }
-
-            // Create trajectory curve
-            const trajectory = new THREE.QuadraticBezierCurve3(
-              startPos,
-              controlPos,
-              targetPos
-            );
-
-            // ========== VISUAL TRAIL ==========
-            const trailGeometry = new THREE.BufferGeometry().setFromPoints(
-              trajectory.getPoints(50)
-            );
-            const trailMaterial = new THREE.LineBasicMaterial({
-              color: trailColor,
-              linewidth: 2,
-            });
-            shotsGroup.add(new THREE.Line(trailGeometry, trailMaterial));
-
-            // ========== ANIMATION LOGIC ==========
-            let progress = 0;
-            const duration = isMade ? 120 : 100;
-            const startTime = Date.now();
-
-            const animate = () => {
-              const elapsed = Date.now() - startTime;
-              const t = Math.min(elapsed / (duration * 16), 1);
-
-              const point = trajectory.getPoint(t);
-              const verticalOffset = Math.sin(t * Math.PI) * (isMade ? 5 : 3);
-
-              ball.position.set(point.x, point.y + verticalOffset, point.z);
-
-              ball.rotation.x = t * Math.PI * 2;
-              ball.rotation.z = t * Math.PI * 1.5;
-
-              if (t < 1) {
-                requestAnimationFrame(animate);
-              } else {
-                if (isMade) animateNet();
-                setTimeout(
-                  () => {
-                    scene.remove(ball);
-                    resolve();
-                  },
-                  isMade ? 1000 : 500
-                );
-              }
-            };
-
-            animate();
-          });
+        for (const shot of shots) {
+          if ((shot.result || "").toLowerCase().includes("made")) {
+            madeCount++;
+          } else {
+            missedCount++;
+          }
         }
 
-        // ✅ Final stats update after all shots
         setStats({
           made: madeCount,
           missed: missedCount,
-          fgPercent:
-            madeCount + missedCount > 0
-              ? ((madeCount / (madeCount + missedCount)) * 100).toFixed(1)
-              : 0,
+          fgPercent: ((madeCount / (madeCount + missedCount)) * 100).toFixed(1),
         });
       } catch (error) {
         console.error("Error loading shots:", error);
       }
-    };
+    }
+
     loadShots();
 
-    // Animation Loop
-    const animate = () => {
+    renderer.setAnimationLoop(() => {
       TWEEN.update();
       controls.update();
       renderer.render(scene, camera);
 
-      
-      requestAnimationFrame(animate);
-    };
-    animate();
+      if (!isAnimating) {
+        animateNextShot();
+      }
+    });
 
     return () => {
       if (mountRef.current) {
@@ -390,7 +368,7 @@ export default function BasketballCourtScene() {
         TWEEN.removeAll();
       }
     };
-  });
+  }, []);
 
   return (
     <div style={{ position: "relative", width: "100vw", height: "100vh" }}>
